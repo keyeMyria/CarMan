@@ -53,4 +53,5 @@ const MenuNav = DrawerNavigator(
             })
         },
     }
-)
+);
+export default MenuNav;
