@@ -1,8 +1,8 @@
-import { SwitchNavigator } from 'react-navigation';
+import { createSwitchNavigator } from 'react-navigation';
 import HomeScreen from '../../Containers/HomeScreen';
-import AuthScreen from '../../Containers/AuthScreen'
+import AuthLoadScreen from '../../Containers/AuthLoadScreen'
 
-const HomeNav = SwitchNavigator(
+const HomeNav = createSwitchNavigator(
     {
         HomeScreen: {
             screen: HomeScreen,
@@ -12,11 +12,11 @@ const HomeNav = SwitchNavigator(
                 header: null,
             }),
         },
-        AuthScreen: {
-            screen: AuthScreen,
+        AuthLoadScreen: {
+            screen: AuthLoadScreen,
             path: '',
             navigationOptions: () => ({
-                title: 'AuthScreen',
+                title: 'AuthLoadScreen',
                 header: null,
             }),
         },

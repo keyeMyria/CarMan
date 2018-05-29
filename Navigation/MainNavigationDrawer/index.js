@@ -8,7 +8,7 @@ import HomeScreen from "../../Containers/HomeScreen/HomeScreen";
 
 const MenuNav = DrawerNavigator(
     {
-        AuthScreen: {
+        AuthLoadScreen: {
             screen: AuthNavigation,
             navigationOptions: () => ({
                 drawerLabel: 'Авторизация',

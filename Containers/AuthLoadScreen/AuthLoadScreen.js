@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 import { Text, View} from 'react-native';
 import { Button } from 'react-native-elements';
 
-class AuthScreen extends Component{
+class AuthLoadScreen extends Component{
+
+    componentDidMount(){
+        this.props.navigation.navigate('LoginScreen');
+    }
+
     render(){
         return(
-            <View style={{backgroundColor:'#123321', height:'100%', width:'100%'}}>
+            <View style={{backgroundColor:'#2521a1', flex:1, justifyContent:'space-around', alignItems:'center'}}>
                 <Text>AuthScreen</Text>
                 <Button
                 title='go to the Home Screen'
@@ -15,4 +20,4 @@ class AuthScreen extends Component{
         )
     }
 }
-export default AuthScreen;
+export default AuthLoadScreen;

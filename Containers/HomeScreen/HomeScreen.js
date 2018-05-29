@@ -8,7 +8,7 @@ export default class HomeScreen extends Component{
                 <Text>HomeScreen</Text>
                 <Button
                     title='go to the Auth Screen'
-                    onPress={()=>this.props.navigation.navigate('AuthScreen')}
+                    onPress={()=>this.props.navigation.navigate('AuthLoadScreen')}
                 />
             </View>
         )
