@@ -1,6 +1,6 @@
-import firebase from 'firebase'
+import * as firebase from 'firebase'
 
-const app = firebase.initializeApp({
+firebase.initializeApp({
     apiKey: "AIzaSyB-qx6oFxXPJb4wzUdK0iweuSgFf8uHEw4",
     authDomain: "carman-faa18.firebaseapp.com",
     databaseURL: "https://carman-faa18.firebaseio.com",
@@ -9,8 +9,14 @@ const app = firebase.initializeApp({
     messagingSenderId: "1051365856529",
 });
 
-class FirebaseApi{
+export default class FirebaseApi {
 
+    static signUpWithEmailAndPassword = (email, password) => firebase.auth().createUserWithEmailAndPassword(email, password);
 
+    static signInWithEmailAndPassword = (email, password) => firebase.auth().signInWithEmailAndPassword(email, password);
+
+    static onAuthStateChanged = (callback) => firebase.auth().onAuthStateChanged(callback);
+
+    static signOut = ()=> firebase.auth().signOut();
 
 }

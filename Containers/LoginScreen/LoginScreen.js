@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import {Button} from 'react-native-elements';
+import api from '../../Service/FirebaseApi';
 
 import * as firebase from 'firebase'
 import {FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
 
-firebase.initializeApp({
+/*firebase.initializeApp({
     apiKey: "AIzaSyB-qx6oFxXPJb4wzUdK0iweuSgFf8uHEw4",
     authDomain: "carman-faa18.firebaseapp.com",
     databaseURL: "https://carman-faa18.firebaseio.com",
     projectId: "carman-faa18",
     storageBucket: "carman-faa18.appspot.com",
     messagingSenderId: "1051365856529",
-});
+});*/
 
 class LoginScreen extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class LoginScreen extends Component {
             error: '',
             loading: true,
         });
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        api.signInWithEmailAndPassword(email, password)
             .then(() => {
                 console.log("SUCCES!!!!!!");
             })
@@ -46,7 +47,7 @@ class LoginScreen extends Component {
             error: '',
             loading: true,
         });
-        firebase.auth().createUserWithEmailAndPassword(email, password)
+        api.signUpWithEmailAndPassword(email, password)
             .then(() => {
                 this.setState({
                     loading: false,
@@ -55,6 +56,16 @@ class LoginScreen extends Component {
             })
             .catch(() => {
                 console.log("auth error");
+            })
+    };
+
+    onSignOutPress = () => {
+        api.signOut()
+            .then(()=>{
+                console.log('вышел');
+            })
+            .catch(()=>{
+                console.log('не вышел');
             })
     };
 
@@ -92,6 +103,10 @@ class LoginScreen extends Component {
                 <Button
                     title='Log In'
                     onPress={this.onLoginPress}
+                />
+                <Button
+                    title='Sign out'
+                    onPress={this.onSignOutPress}
                 />
             </View>
         )
