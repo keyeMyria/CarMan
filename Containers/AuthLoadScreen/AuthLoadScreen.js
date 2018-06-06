@@ -10,13 +10,14 @@ class AuthLoadScreen extends Component {
         api.onAuthStateChanged((user) => {
             if (user) {
                 console.log('batya v zdanii');
+                this.props.navigation.navigate('HomeScreen');
+
             } else {
-                console.log('не вошёл');
+                this.props.navigation.navigate('LoginScreen');
+                //console.log('не вошёл');
             }
         });
-
-        this.props.navigation.navigate('LoginScreen');
-    }
+        }
 
     render() {
         return (

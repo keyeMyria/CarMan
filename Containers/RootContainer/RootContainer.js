@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AuthNavigation from '../../Navigation/AuthNavigation';
+import AuthNavigation from '../../Navigation/MainBottomNavigator' //'../../Navigation/AuthNavigation';
 
 class RootContainer extends Component{
     render(){

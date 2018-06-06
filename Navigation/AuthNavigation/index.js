@@ -5,7 +5,11 @@ import LoginScreen from '../../Containers/LoginScreen'
 
 const AuthNav = createSwitchNavigator(
     {
-        AuthLoadScreen: {
+
+        AuthLoadScreen,
+        HomeScreen,
+        LoginScreen,
+/*        AuthLoadScreen: {
             screen: AuthLoadScreen,
             path: '',
             navigationOptions: () => ({
@@ -28,7 +32,7 @@ const AuthNav = createSwitchNavigator(
                 title: 'LoginScreen',
                 header: null,
             }),
-        },
+        },*/
     },
     {
         headerMode: 'none',

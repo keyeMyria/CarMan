@@ -2,22 +2,14 @@ import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import {Button} from 'react-native-elements';
 import api from '../../Service/FirebaseApi';
+import PropTypes from 'prop-types'
 
-import * as firebase from 'firebase'
 import {FormLabel, FormInput, FormValidationMessage} from 'react-native-elements'
-
-/*firebase.initializeApp({
-    apiKey: "AIzaSyB-qx6oFxXPJb4wzUdK0iweuSgFf8uHEw4",
-    authDomain: "carman-faa18.firebaseapp.com",
-    databaseURL: "https://carman-faa18.firebaseio.com",
-    projectId: "carman-faa18",
-    storageBucket: "carman-faa18.appspot.com",
-    messagingSenderId: "1051365856529",
-});*/
 
 class LoginScreen extends Component {
     constructor(props) {
         super(props);
+        this.props = props;
         this.state = {
             password: '',
             email: '',
@@ -82,8 +74,9 @@ class LoginScreen extends Component {
     };
 
     render() {
+        //const {canvasColor} = this.context.uiTheme.palette;
         return (
-            <View style={{backgroundColor: '#2521a1', flex: 1, justifyContent: 'flex-start', alignItems: 'stretch'}}>
+            <View style={{backgroundColor: '#d0cd9e', flex: 1, justifyContent: 'flex-start', alignItems: 'stretch'}}>
                 <Text>Login screen</Text>
                 <Button
                     title='go to the Home Screen'
@@ -112,5 +105,9 @@ class LoginScreen extends Component {
         )
     }
 }
+
+LoginScreen.contextType={
+    uiTheme: PropTypes.object.isRequired,
+};
 
 export default LoginScreen;
