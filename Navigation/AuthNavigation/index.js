@@ -1,38 +1,14 @@
 import { createSwitchNavigator } from 'react-navigation';
-import HomeScreen from '../../Containers/HomeScreen';
 import AuthLoadScreen from '../../Containers/AuthLoadScreen'
 import LoginScreen from '../../Containers/LoginScreen'
-
+import MainBottomNavigator from '../MainBottomNavigator'
 const AuthNav = createSwitchNavigator(
     {
 
         AuthLoadScreen,
-        HomeScreen,
         LoginScreen,
-/*        AuthLoadScreen: {
-            screen: AuthLoadScreen,
-            path: '',
-            navigationOptions: () => ({
-                title: 'AuthLoadScreen',
-                header: null,
-            }),
-        },
-        HomeScreen: {
-            screen: HomeScreen,
-            path: '',
-            navigationOptions: () => ({
-                title: 'HomeScreen',
-                header: null,
-            }),
-        },
-        LoginScreen: {
-            screen: LoginScreen,
-            path: '',
-            navigationOptions: () => ({
-                title: 'LoginScreen',
-                header: null,
-            }),
-        },*/
+        MainBottomNavigator,
+
     },
     {
         headerMode: 'none',
